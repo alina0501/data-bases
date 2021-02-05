@@ -1,0 +1,45 @@
+.aside-right{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 25%;
+  margin: 50px 30px 10px 30px;
+  position: fixed;
+  padding: 1em;
+  right: 0;
+  top: 0;
+  transform: translateX(0%);
+}
+.popular{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.hot{
+  list-style-image: url("svg/fire.svg") ;
+  list-style-position: inside;
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5% 5% 5% 5%
+}
+.trending{
+  list-style-image: url("svg/stat.svg");
+  list-style-position: inside;
+  border-radius: 5px;
+  padding: 5% 5% 5% 5%
+
+}
+.fresh{
+  list-style-image: url("svg/passage-of-time.svg");
+  list-style-position: inside;
+  border-radius: 5px;
+  padding: 5% 5% 5% 5%
+}
+.fresh:hover{
+  background-color: lightgrey;
+}
+.trending:hover{
+  background-color: lightgrey;
+}

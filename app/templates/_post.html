@@ -1,0 +1,20 @@
+<table class="post">
+        <tr valign="top">
+            <td class="highertext">
+                {%  for categ in categs %}
+                    {% if (categ.id==post.category) %}
+                        {{ categ.name }}
+                    {% endif %}
+                {% endfor %}
+                {{ post.timestamp }}</td>
+        </tr>
+        <tr>
+            <td> <h2>{{ post.text }}</h2></td>
+        </tr>
+        <tr class="post-img-row">
+            <td>
+                <img class="post-img" src="{{ url_for('static', filename='instance/img/'+post.content)}}" alt="meme">
+            </td>
+        </tr>
+<hr>
+</table>

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block left%}
+    <h3 style="color: gray ">SECTIONS <br> <br></h3>
+        <nav >
+          <ul class="sections">
+            {% for categ in categs %}
+                    <li>
+                      <a class="section" href="/category/{{ categ.name }}" >{{ categ.name }}</a>
+                    </li>
+            {% endfor %}
+          </ul>
+        </nav>
+{% endblock %}
+{% block feed %}
+
+            <h1>Hi, {{ current_user.username }}!</h1>
+            <form class="form" action="" method="post" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.post.label }}<br>
+                    {{ form.post(cols=32, rows=4) }}<br>
+                    {% for error in form.post.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <div class="wrapper">
+                    <p>
+                        {{ form.image.label }}<br>
+                        {{ form.image(class_="select-css") }}
+                        {% for error in form.post.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+
+                    </p>
+                    <p>
+                        {{ form.category.label }}<br>
+                        {{ form.category(class_="select-css") }}
+                        {% for error in form.post.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                </div>
+                <p>
+                    {{ form.submit(class_="btn")}}
+                    {% for error in form.post.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+            </form>
+            {% for post in posts %}
+            {% include '_post.html' %}
+            {% endfor %}
+
+{% endblock %}
+{% block right %}
+    <h3 style="color: gray ">POPULAR <br> <br> </h3>
+    <nav >
+    <ul class="sections">
+      <li class="hot">
+        <a href="{{url_for('index')}}" style="color: black">Hot</a>
+      </li>
+      <li class="trending">
+        <a href="{{url_for('index')}}" style="color: black" >Trending</a>
+      </li>
+      <li class="fresh">
+        <a href="{{url_for('index')}}"  style="color: black">Fresh</a>
+      </li>
+    </ul>
+    </nav>
+{% endblock %}

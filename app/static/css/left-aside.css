@@ -1,0 +1,35 @@
+.aside-left{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 25%;
+  margin: 50px 30px 10px 50px;
+  position: fixed;
+  padding: 1em 3em 1em 2em;
+  left: 0;
+  top: 0;
+  transform: translateX(0%);
+}
+
+.section{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+
+}
+.sections li a{
+  color: #13232f;
+  border-radius: 5px;
+  padding: 5% 5% 5% 5%;
+}
+.sections li a:hover{
+  background-color: lightgrey;
+}
+footer{
+  font-size: 0.7em;
+  margin-top: 10%;
+  color: gray;
+}
+
+
